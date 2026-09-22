@@ -1,11 +1,11 @@
 const data = [{
-       name: "Bulbasaur",
+        name: "Bulbasaur",
         img: "http://www.serebii.net/pokemongo/pokemon/001.png",
-         type: [
+        type: [
             "Grass",
             "Poison"
         ],
-       weaknesses: [
+        weaknesses: [
             "Fire",
             "Ice",
             "Flying",
@@ -68,40 +68,41 @@ const data = [{
 
 
 const list = document.querySelector(".list");
-for (let i = 0; i < data.length; i++) { const item = document.createElement("li");
-const name = document.createElement("p");
-name.textContent = data[i].name;
+for (let i = 0; i < data.length; i++) {
+    const item = document.createElement("li");
+    const name = document.createElement("p");
+    name.textContent = data[i].name;
 
-const img = document.createElement("img");
-img.src = data[i].img;
-item.append(name);
-item.append(img);
-
-
-const typeTitle = document.createElement("p");
-typeTitle.textContent = "Type:";
-item.append(typeTitle);
-
-const typeUl = document.createElement("ul");
-for (let j = 0; j < data[i].type.length; j++) {
-    const li = document.createElement("li");
-    li.textContent = data[i].type[j];
-    typeUl.append(li);
-}
-item.append(typeUl);
-
-const weakTitle = document.createElement("p");
-weakTitle.textContent = "Weaknesses:";
-item.append(weakTitle);
-
-const weakUl = document.createElement("ul");
-for (let k = 0; k < data[i].weaknesses.length; k++) {
-    const li = document.createElement("li");
-    li.textContent = data[i].weaknesses[k];
-    weakUl.append(li);
-}
-item.append(weakUl);
+    const img = document.createElement("img");
+    img.src = data[i].img;
+    item.append(name);
+    item.append(img);
 
 
-list.append(item);
+    const typeTitle = document.createElement("p");
+    typeTitle.textContent = "Type:";
+    item.append(typeTitle);
+
+    const typeUl = document.createElement("ul");
+    for (let j = 0; j < data[i].type.length; j++) {
+        const li = document.createElement("li");
+        li.textContent = data[i].type[j];
+        typeUl.append(li);
+    }
+    item.append(typeUl);
+
+    const weakTitle = document.createElement("p");
+    weakTitle.textContent = "Weaknesses:";
+    item.append(weakTitle);
+
+    const weakUl = document.createElement("ul");
+    for (let k = 0; k < data[i].weaknesses.length; k++) {
+        const li = document.createElement("li");
+        li.textContent = data[i].weaknesses[k];
+        weakUl.append(li);
+    }
+    item.append(weakUl);
+
+
+    list.append(item);
 }
