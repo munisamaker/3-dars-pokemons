@@ -75,13 +75,11 @@ for (let i = 0; i < data.length; i++) {
 
     const img = document.createElement("img");
     img.src = data[i].img;
-    item.append(name);
-    item.append(img);
 
 
     const typeTitle = document.createElement("p");
     typeTitle.textContent = "Type:";
-    item.append(typeTitle);
+
 
     const typeUl = document.createElement("ul");
     for (let j = 0; j < data[i].type.length; j++) {
@@ -89,11 +87,9 @@ for (let i = 0; i < data.length; i++) {
         li.textContent = data[i].type[j];
         typeUl.append(li);
     }
-    item.append(typeUl);
 
     const weakTitle = document.createElement("p");
     weakTitle.textContent = "Weaknesses:";
-    item.append(weakTitle);
 
     const weakUl = document.createElement("ul");
     for (let k = 0; k < data[i].weaknesses.length; k++) {
@@ -101,6 +97,12 @@ for (let i = 0; i < data.length; i++) {
         li.textContent = data[i].weaknesses[k];
         weakUl.append(li);
     }
+
+    item.append(img);
+    item.append(name);
+    item.append(typeTitle);
+    item.append(typeUl);
+    item.append(weakTitle);
     item.append(weakUl);
 
 
